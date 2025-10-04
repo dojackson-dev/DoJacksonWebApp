@@ -1,0 +1,105 @@
+<!-- Moved from project root -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nightlife</title>
+    <link rel="stylesheet" href="sass/style.css">
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <h1 class="pageTitle">Nightlife</h1>
+        <section class="pagehero">
+            <div class="hero-placeholder" style="width:100%;height:180px;background:#eee;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#888;font-size:1.5rem;">Image Placeholder</div>
+            <div class="hero-desc">
+                <h2 class="hero-title">Jimmy Dean: The Man Who Lit Up Jackson’s Cigar Scene</h2>
+                <p class="byline"><em>By The Renaissance Man</em></p>
+
+                <div class="story-collapsible collapsed" id="jimmy-story">
+                <div class="hero-byline-img" aria-hidden="true">Image</div>
+                <p>Jimmy Dean has been smoking cigars for nearly half a century. He laughs when you ask how it all started. “I can’t go back that far,” he says, “I’ve been smoking them for almost 50 years. I had an uncle that smoked cigars — cheap cigars — when I was growing up. He’s the only one I can blame it on.”</p>
+
+                <p>What began as a curiosity became a lifetime devotion. By the year 2000, Jimmy found himself no longer just a smoker, but a figure in the business of cigars. He stepped in as general manager of Havana Smoke Shop on I-55 North, taking over operations and building it into one of the premier cigar shops in the Southeast. For Jackson’s cigar lovers, Havana wasn’t just a store — it was a clubhouse, a gathering ground, a temple of tobacco where anyone could walk in and be part of the mystique.</p>
+
+                <p>The market in Jackson has swelled in the last quarter century. Jimmy has seen it firsthand. In the early days, the cigar boom created a wave of eager customers chasing the culture. But the real change, he explains, came as younger generations discovered the leaf. They weren’t satisfied with just any smoke; they got better at smoking, learned to appreciate the craft, and began reaching for finer cigars. The business grew not just on numbers, but on knowledge. Jackson, like much of the country, was becoming a city of true aficionados.</p>
+
+                <p>Jimmy is quick to credit the early pioneers who helped shape Jackson’s cigar scene. He remembers Brett Baxter, who gave Havana its air of mystique, and Larry Nesbitt, another name from the city’s cigar foundation. There were the Reeves — Gwen Reeves and her shop on Lakeland, the Country Squire — who offered another haven for smokers. The community wasn’t large, but it was passionate, and it planted the seeds for what cigar culture in Jackson would become.</p>
+
+                <p>Ask Jimmy if Jackson’s cigar scene is unique, though, and he waves it off. “Cigar smokers are all pretty much the same, no matter where you go,” he says. “They know what they want, or at least think they know what they want, and they’re always looking for that next thing. It’s a journey. You find new spots, new cigars you haven’t tried. It’s always growing — not because of the city, but because of the people and where they’re at in life.”</p>
+
+                <p>His own journey has taken him from smoker to businessman, from the shop floors of Mississippi to the tobacco fields of Latin America. He fell into the business almost by accident, but once inside, the education was endless. He learned the art of buying, selling, and trading cigars, met the industry’s biggest names, and studied their craft. Visits to the factories deepened his appreciation — from the growers who tended the plants, to the pickers and harvesters, to the rollers whose hands transformed leaf into smoke. “One day,” he reflects, “it just shows up in the store, ready to sell. But there’s a whole world of labor and passion behind every cigar.”</p>
+
+                <p>When it comes to his own preferences, Jimmy doesn’t hesitate. His humidor leans toward a Tatuaje, an Ashton VSG, or the Zino Barrel. As for shape, he smiles at the old debate. Rollers often insist the smaller vitolas carry the most flavor. Jimmy disagrees. “I’ve always liked the Toro or the Double Toro,” he explains, describing the fat, seven-to-eight-inch sticks with a 55–56 ring gauge. Bigger than a Corona, but exactly his style. And when it’s time to pair? Bourbon. Always bourbon. “Anything I smoke will go with bourbon,” he says, though he’ll admit that lighter cigars can play nicely with tequila. Still, in his book, bourbon wins every time.</p>
+
+                <p>He has advice for those just beginning their cigar journey, and it’s refreshingly simple: smoke. “It’s the only way you’re ever going to know if one cigar is better for you than the one next to it,” he says. Every cigar, every box, every mood, every day — they’re all different. He warns newcomers against clinging to one stick forever. That, he says, is boring. “There are just too many out there for you to skip over. You’ve got to try them all.”</p>
+
+                <p>And beyond variety, he reminds us, cigars are shaped by life itself. The flavor isn’t only in the leaf — it’s in the day you’ve had. “How you woke up this morning, what kind of mood you’re in, what you’ve had to eat, your mindset — positive or negative — all of that can affect the outcome you get from smoking a cigar.”</p>
+
+                <p>To Jimmy, cigars are more than smoke. They are connection. Running a shop, he says, isn’t the same as visiting one. “Those of us who work in the business are just party managers. We’re not the party,” he reflects. The real magic happens among the people. “You run into all groups, all classes, like Dr. Foyer’s Indian Chiefs — but they’ve all got one thing in common: the desire to have a great cigar.”</p>
+
+                <p>His connection to Jackson’s nightlife is simple: he provides the masses with cigars that, hopefully, hit all the right notes. But nightlife isn’t always planned. When asked what’s next, he shrugs. “The next party is the next party. Most of them you don’t schedule — they just happen based on who’s in the spot at that particular moment. It may be a little party or it may be a big party, but it’s always about the people there. The best ones are always the ones that just happen. I’m a witness to that. Cigar culture is about people gathering around a good smoke and enjoying whatever they want to enjoy.”</p>
+
+                <p>Jimmy Dean has lived enough cigar nights to know the truth: the best smokes aren’t about perfection, but about people. His story is one of decades spent cultivating a community, guiding new smokers, and sharing the leaf with anyone who wants to join the journey.</p>
+
+                <p>And so, if you find yourself in Jackson and catch the rich aroma of a fine cigar drifting through the night air, don’t be surprised if Jimmy is nearby — laughing, pouring bourbon, and reminding everyone that in cigar life, the best memories aren’t scheduled. They just happen.</p>
+
+                <p>🔥 #DoJackson — because here, even the smoke has stories to tell.</p>
+                </div>
+
+                <button id="jimmy-toggle" class="read-toggle" aria-expanded="false">See more</button>
+            </div>
+        </section>
+        <div id="nightlife-list"></div>
+    </main>
+    <div id="footer"></div>
+    <script>
+        fetch('/header.html').then(r=>r.text()).then(d=>{
+            document.getElementById('header').innerHTML=d;
+            // Menu toggle script (now runs after injection)
+            var menuToggle = document.getElementById('menuToggle');
+            var mobileMenu = document.getElementById('mobileMenu');
+            if (menuToggle && mobileMenu) {
+                mobileMenu.style.display = 'none';
+                menuToggle.addEventListener('click', function() {
+                    mobileMenu.style.display = (mobileMenu.style.display === 'none') ? 'block' : 'none';
+                });
+                var menuLinks = mobileMenu.querySelectorAll('a');
+                menuLinks.forEach(function(link) {
+                    link.addEventListener('click', function(e) {
+                        menuLinks.forEach(function(l) { l.classList.remove('selected'); });
+                        this.classList.add('selected');
+                    });
+                });
+            }
+        });
+        fetch('/footer.html').then(r=>r.text()).then(d=>{document.getElementById('footer').innerHTML=d;});
+    </script>
+    <script>
+        // Toggle script for Jimmy Dean story
+        (function(){
+            var btn = document.getElementById('jimmy-toggle');
+            var story = document.getElementById('jimmy-story');
+            if(btn && story){
+                btn.addEventListener('click', function(){
+                    var expanded = btn.getAttribute('aria-expanded') === 'true';
+                    if(expanded){
+                        story.classList.remove('expanded');
+                        story.classList.add('collapsed');
+                        btn.textContent = 'See more';
+                        btn.setAttribute('aria-expanded','false');
+                    } else {
+                        story.classList.remove('collapsed');
+                        story.classList.add('expanded');
+                        btn.textContent = 'See less';
+                        btn.setAttribute('aria-expanded','true');
+                    }
+                });
+            }
+        })();
+    </script>
+    <!-- Load the nightlife carousel module which initializes the carousel on DOMContentLoaded -->
+    <script type="module" src="./js/nightlife-carousel.js"></script>
+</body>
+</html>

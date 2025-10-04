@@ -1,0 +1,130 @@
+/* Design tokens (migrated from @import to @use)
+	Using a namespace keeps variables organized and avoids globals.
+*/
+@use 'tokens' as tokens;
+
+/* ===== BASE STYLES ===== */
+.pageTitle {
+	display: block;
+	margin: tokens.$spacing-8 auto tokens.$spacing-4 auto;
+	padding: tokens.$spacing-2 tokens.$spacing-6;
+	background: tokens.$color-secondary;
+	color: tokens.$color-white;
+	font-size: tokens.$font-size-4xl;
+	font-weight: tokens.$font-weight-bold;
+	text-align: center;
+	border-radius: tokens.$border-radius-lg;
+	max-width: 90vw;
+	box-shadow: tokens.$shadow-md;
+}
+
+/* ===== PAGE HERO STYLES ===== */
+.pagehero {
+	display: flex;
+	gap: tokens.$spacing-4;
+	align-items: flex-start;
+}
+
+.pagehero .hero-placeholder {
+	flex: 0 0 40%;
+	max-width: 40%;
+}
+
+.pagehero .hero-desc {
+	background: tokens.$color-white;
+	color: tokens.$color-black;
+	padding: tokens.$spacing-5;
+	border-radius: tokens.$border-radius-lg;
+	box-shadow: tokens.$shadow-sm;
+	line-height: tokens.$line-height-relaxed;
+}
+
+.pagehero .hero-desc h2,
+.pagehero .hero-desc p,
+.pagehero .hero-desc em {
+	color: inherit;
+}
+
+@media (max-width: tokens.$breakpoint-md) {
+	.pagehero {
+		flex-direction: column;
+	}
+	.pagehero .hero-placeholder {
+		flex-basis: auto;
+		max-width: 100%;
+		width: 100%;
+		height: 220px;
+	}
+}
+
+/* ===== HERO TITLE & BYLINE STYLES ===== */
+.hero-title { 
+	color: tokens.$color-primary; 
+	margin: 0 0 tokens.$spacing-1 0; 
+}
+
+.byline { 
+	color: tokens.$color-gray-600; 
+	margin: 0 0 tokens.$spacing-3 0; 
+	font-size: tokens.$font-size-sm; 
+}
+
+.hero-byline-img { 
+	width: 96px; 
+	height: 96px; 
+	background: tokens.$color-gray-200; 
+	color: tokens.$color-gray-600; 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: tokens.$border-radius-md;
+	margin: tokens.$spacing-2 0; 
+	font-weight: tokens.$font-weight-bold;
+}
+
+@media (min-width: tokens.$breakpoint-md) {
+	.pagehero { 
+		align-items: flex-start;
+	}
+	.pagehero .hero-desc { 
+		flex: 1;
+	}
+	.story-collapsible .hero-byline-img { 
+		float: left; 
+		width: 120px; 
+		height: 120px; 
+		margin-right: tokens.$spacing-4; 
+		margin-bottom: tokens.$spacing-2;
+	}
+}
+
+/* ===== COLLAPSIBLE STORY STYLES ===== */
+.story-collapsible { 
+	max-height: 8.5rem; 
+	overflow: hidden; 
+	transition: max-height 0.28s ease;
+}
+
+.story-collapsible.collapsed { 
+	max-height: 6rem;
+}
+
+.story-collapsible.expanded { 
+	max-height: 2000px;
+}
+
+.read-toggle { 
+	display: inline-block;
+	margin-top: tokens.$spacing-3;
+	background: tokens.$color-primary;
+	color: tokens.$color-white;
+	border: none;
+	padding: tokens.$spacing-2 tokens.$spacing-3;
+	border-radius: tokens.$border-radius-md;
+	cursor: pointer;
+	font-weight: tokens.$font-weight-medium;
+    
+	&:hover {
+		opacity: 0.9;
+	}
+}

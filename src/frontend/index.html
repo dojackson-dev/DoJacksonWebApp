@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Demo</title>
+    <link rel="stylesheet" href="/sass/style.css">
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+       
+    </main>
+    <div id="footer"></div>
+    <script>
+        // Load header and initialize menu
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+                // Menu toggle script (now runs after injection)
+                var menuToggle = document.getElementById('menuToggle');
+                var mobileMenu = document.getElementById('mobileMenu');
+                if (menuToggle && mobileMenu) {
+                    mobileMenu.style.display = 'none';
+                    menuToggle.addEventListener('click', function() {
+                        mobileMenu.style.display = (mobileMenu.style.display === 'none') ? 'block' : 'none';
+                    });
+                    var menuLinks = mobileMenu.querySelectorAll('a');
+                    menuLinks.forEach(function(link) {
+                        link.addEventListener('click', function(e) {
+                            menuLinks.forEach(function(l) { l.classList.remove('selected'); });
+                            this.classList.add('selected');
+                        });
+                    });
+                }
+            });
+        // Load footer
+        fetch('/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
