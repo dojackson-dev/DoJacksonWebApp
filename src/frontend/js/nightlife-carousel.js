@@ -59,7 +59,7 @@ function createCarousel(items) {
             <p style="margin:4px 0;"><a href="${createMapLink(item.address)}" target="_blank">${formatAddress(item.address)}</a></p>
             <p style="margin:4px 0;">${item.phone || ''}</p>
           </div>
-          <div class="website-link" style="text-align:center;margin:8px 0;"><a href="${item.url}" target="_blank" style="display:inline-block;background:#ff9900;color:#0033cc;padding:8px 12px;border-radius:4px;text-decoration:none;font-weight:600;">Website</a></div>
+          <div class="website-link"><a href="${item.url}" target="_blank" class="website-btn">Website</a></div>
           <div class="card-desc"><span class="desc-title">Description:</span> ${item.description}</div>
         </div>
       </div>

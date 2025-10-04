@@ -82,7 +82,7 @@ function createWeekCarousel(events) {
         <p class="address-title">Address:</p>
         <p><a href="${createMapLink(event.address)}" target="_blank">${formatAddress(event.address)}</a></p>
         <p>${event.phone || ''}</p>
-        <div class="website-link"><a href="${event.url}" target="_blank">Website</a></div>
+        <div class="website-link"><a href="${event.url}" target="_blank" class="website-btn">Website</a></div>
         <div class="card-desc"><span class="desc-title">Description:</span> ${event.description}</div>
       </div>
     </div>
