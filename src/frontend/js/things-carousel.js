@@ -17,9 +17,11 @@ function createCarousel(items) {
         <div class="card-section">
           <h5>${item.name}</h5>
           <div class="address-logo-line"><img src="img/locationico.png" alt="Location" class="location-icon" /></div>
-          <p class="address-title">Address:</p>
-          <p><a href="${createMapLink(item.address)}" target="_blank">${formatAddress(item.address)}</a></p>
-          <p>${item.phone || ''}</p>
+          <div class="contact">
+            <p class="address-title">Address:</p>
+            <p><a href="${createMapLink(item.address)}" target="_blank">${formatAddress(item.address)}</a></p>
+            <p>${item.phone || ''}</p>
+          </div>
           <div class="website-link"><a href="${item.url}" target="_blank">Website</a></div>
           <div class="card-desc"><span class="desc-title">Description:</span> ${item.description}</div>
         </div>

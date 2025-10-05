@@ -128,3 +128,36 @@
 		opacity: 0.9;
 	}
 }
+
+/* ===== CARD ADDRESS CENTERING STYLES ===== */
+.address-logo-line {
+	text-align: center;
+}
+
+.address-title {
+	text-align: center;
+}
+
+.contact {
+	text-align: center;
+	
+	p {
+		text-align: center;
+	}
+}
+
+/* Ensure address links and phone numbers are centered in all card types */
+.things-card,
+.restaurants-card,
+.nightlife-card,
+.events-card {
+	.address-title {
+		text-align: center;
+	}
+	
+	/* Target paragraphs that follow address-title (address links and phone) */
+	.address-title + p,
+	.address-title + p + p {
+		text-align: center;
+	}
+}

@@ -20,3 +20,54 @@ body{background:#ccc;color:#333;font-family:Arial, sans-serif;margin:0;padding:0
 /* Additional clamp fallback for browsers that support -webkit-line-clamp */
 .story-collapsible.collapsed p{display:-webkit-box;-webkit-line-clamp:6;line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
 .read-toggle{display:inline-block;margin-top:0.75rem;background:#0052CC;color:#fff;border:none;padding:0.5rem 0.75rem;border-radius:6px;cursor:pointer}
+
+/* ===== CARD ADDRESS CENTERING STYLES ===== */
+/* Ensure all address elements are centered across all card types */
+.address-logo-line {
+    text-align: center !important;
+}
+
+.address-title {
+    text-align: center !important;
+}
+
+.contact {
+    text-align: center !important;
+}
+
+.contact p {
+    text-align: center !important;
+}
+
+/* Ensure address links and phone numbers are centered in all card types */
+.things-card .address-title,
+.restaurants-card .address-title,
+.nightlife-card .address-title,
+.events-card .address-title {
+    text-align: center !important;
+}
+
+/* Target paragraphs that follow address-title (address links and phone) */
+.things-card .address-title + p,
+.things-card .address-title + p + p,
+.restaurants-card .address-title + p,
+.restaurants-card .address-title + p + p,
+.nightlife-card .address-title + p,
+.nightlife-card .address-title + p + p,
+.events-card .address-title + p,
+.events-card .address-title + p + p {
+    text-align: center !important;
+}
+
+/* Ensure phone numbers and address links are centered */
+.things-card p,
+.restaurants-card p,
+.nightlife-card p,
+.events-card p {
+    text-align: center;
+}
+
+/* Override any left-aligned text in card sections for address-related elements */
+.card-section p:not(.card-desc p) {
+    text-align: center;
+}

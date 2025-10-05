@@ -79,9 +79,11 @@ function createWeekCarousel(events) {
   <div class="event-day">${getDayOfWeek(event.date)}</div>
   <h5>${event.name}</h5>
   <div class="address-logo-line"><img src="img/locationico.png" alt="Location" class="location-icon" onerror="this.onerror=null;this.src='img/logo.png'" /></div>
-        <p class="address-title">Address:</p>
-        <p><a href="${createMapLink(event.address)}" target="_blank">${formatAddress(event.address)}</a></p>
-        <p>${event.phone || ''}</p>
+        <div class="contact">
+          <p class="address-title">Address:</p>
+          <p><a href="${createMapLink(event.address)}" target="_blank">${formatAddress(event.address)}</a></p>
+          <p>${event.phone || ''}</p>
+        </div>
         <div class="website-link"><a href="${event.url}" target="_blank" class="website-btn">Website</a></div>
         <div class="card-desc"><span class="desc-title">Description:</span> ${event.description}</div>
       </div>
