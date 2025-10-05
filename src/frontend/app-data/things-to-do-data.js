@@ -7,7 +7,7 @@ export const thingsToDo = [
     phone: "(601) 576-6000",
     url: "https://www.mdwfp.com/museum/",
     type: "experiences-activities",
-    image: "https://www.mdwfp.com/media/1057/museum-exterior.jpg",
+    image: "img/musnaturalscience.jpg",
     description: "Located within LeFleur’s Bluff State Park, this museum features living species, aquariums, fossils, nature trails, and the Dinosaur Trail with life-size models."
   },
   {
@@ -16,7 +16,7 @@ export const thingsToDo = [
     phone: "(601) 432-2400",
     url: "https://www.mdwfp.com/",
     type: "experiences-activities",
-    image: "https://www.mdwfp.com/media/1058/wildlife-parks.jpg",
+    image:"img/mwfd.png",
     description: "Explore Mississippi’s wildlife, parks, and outdoor recreation opportunities."
   },
   {
@@ -25,7 +25,7 @@ export const thingsToDo = [
     phone: "(601) 981-5469",
     url: "https://mschildrensmuseum.org/",
     type: "family-kid",
-    image: "https://mschildrensmuseum.org/wp-content/uploads/2021/05/mcm-exterior.jpg",
+    image: "img/mschildrens.jpg",
     description: "A hands-on, interactive museum designed for kids, offering playful, educational exhibits in a dynamic learning environment. Located within LeFleur’s Bluff Education and Tourism Complex."
   },
   {
@@ -34,7 +34,7 @@ export const thingsToDo = [
     phone: "(601) 960-1457",
     url: "https://www.jacksonms.gov/smith-robertson-museum",
     type: "arts-culture",
-    image: "https://www.jacksonms.gov/sites/default/files/styles/large/public/2021-03/smith-robertson-museum.jpg",
+    image: "img/smithroberts.jpg",
     description: "Delve into African American history and culture in Mississippi through thoughtful exhibits and educational programs."
   },
   {
@@ -43,7 +43,7 @@ export const thingsToDo = [
     phone: "(601) 576-6920",
     url: "https://www.mdah.ms.gov/old-capitol-museum",
     type: "arts-culture",
-    image: "https://www.mdah.ms.gov/sites/default/files/styles/large/public/2021-03/old-capitol-museum.jpg",
+    image: "img/oldcapitolmuseum.jpg",
     description: "Housed in the historic Old Capitol building, this museum explores Mississippi's political history and legislative legacy through immersive exhibits."
   },
   {
@@ -52,7 +52,7 @@ export const thingsToDo = [
     phone: "(601) 432-4500",
     url: "https://www.msagmuseum.org/",
     type: "experiences-activities",
-    image: "https://www.msagmuseum.org/wp-content/uploads/2019/07/ag-museum-exterior.jpg",
+    image: "img/agmuseum.jpg",
     description: "Celebrate the state’s agricultural heritage with interactive displays, living history demonstrations, and insights into rural life and forestry practices."
   },
   {
@@ -61,7 +61,7 @@ export const thingsToDo = [
     phone: "(601) 965-7100",
     url: "https://www.nps.gov/memy/index.htm",
     type: "arts-culture",
-    image: "https://www.nps.gov/common/uploads/structured_data/3C7B2B2B-1DD8-B71B-0B6B2B6B2B6B2B6B.jpg",
+    image: "img/medgarevers.jpg",
     description: "The preserved home of civil rights leader Medgar Evers—a National Historic Landmark turned museum—provides a deeply moving connection to civil rights history."
   },
   {
@@ -70,7 +70,7 @@ export const thingsToDo = [
     phone: "(601) 987-3985",
     url: "https://www.mdwfp.com/parks-destinations/state-parks/lefleurs-bluff/",
     type: "outdoors-recreation",
-    image: "https://www.mdwfp.com/media/1056/lefleurs-bluff-state-park.jpg",
+    image: "img/lefleursbluff.jpg",
     description: "Enjoy hiking, fishing, picnics, playgrounds, and nature trails in a scenic state park."
   },
   {
@@ -79,7 +79,7 @@ export const thingsToDo = [
     phone: "(601) 960-1515",
     url: "https://msmuseumart.org/",
     type: "arts-culture",
-    image: "https://msmuseumart.org/wp-content/uploads/2021/05/museum-exterior.jpg",
+    image: "img/msmusofart.jpg",
     description: "Explore regional and national art exhibits in a modern downtown museum."
   },
   {
@@ -88,25 +88,17 @@ export const thingsToDo = [
     phone: "(601) 576-6800",
     url: "https://twomississippimuseums.com/",
     type: "arts-culture",
-    image: "https://twomississippimuseums.com/wp-content/uploads/2021/03/two-mississippi-museums-exterior.jpg",
+    image: "img/twomuseums.jpg",
     description: "Explore the Mississippi Civil Rights Museum and Museum of Mississippi History in one landmark location."
   },
-  {
-    name: "Mississippi Children's Museum",
-    address: "2145 Museum Blvd, Jackson, MS 39202",
-    phone: "(601) 981-5469",
-    url: "https://mschildrensmuseum.org/",
-    type: "family-kid",
-    image: "https://mschildrensmuseum.org/wp-content/uploads/2021/05/mcm-exterior.jpg",
-    description: "Interactive exhibits and hands-on learning for kids and families."
-  },
+  
   {
     name: "Mississippi Sports Hall of Fame & Museum",
     address: "1152 Lakeland Dr, Jackson, MS 39216",
     phone: "(601) 982-8264",
     url: "https://msfame.com/",
     type: "experiences-activities",
-    image: "https://msfame.com/wp-content/uploads/2019/07/mshf-exterior.jpg",
+    image: "img/mssportshalloffame.png",
     description: "Celebrate Mississippi's sports legends and history with interactive exhibits."
   },
   // ...add other objects here...
