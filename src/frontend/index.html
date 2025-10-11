@@ -4,36 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic Demo</title>
-    <link rel="stylesheet" href="/sass/style.css">
-    <link rel="stylesheet" href="/hero.css">
+    <link rel="stylesheet" href="sass/style.css">
 </head>
 <body>
     <div id="header"></div>
     <main>
-        <h1 class="pageTitle">Do Jackson</h1>
-        <section class="pagehero index-hero">
-            <div class="hero-placeholder">
-                <img src="img/mural.jpg" alt="Do Jackson Mural">
-            </div>
+        <section class="pagehero">
+            <img class="hero-img" src="img/jacksonwall.jpg" alt="Do Jackson mural">
             <div class="hero-desc">
-                <h2 class="hero-title">Do Jackson: Because Somebody’s Gotta Love This City Right</h2>
-                <p class="byline"><em>By The Renaissance Man</em></p>
-
+                <h2 class="hero-title">Do Jackson</h2>
+                <p class="byline"><em>Welcome to Jackson, Mississippi</em></p>
+                
                 <div class="story-collapsible collapsed" id="dojackson-story">
-                    <img class="hero-byline-img" src="img/skyline.jpg" alt="Jackson skyline">
-                    <p>Welcome to Do Jackson, the city’s official unofficial headquarters for fun, food, and good times — because, let’s be honest, the state sure ain’t paving the way for us (literally). The potholes may keep you guessing, but the people, food, and culture keep you coming back.</p>
-
-                    <p>Here in Jackson, we don’t wait for someone else to fix it — we just throw a festival on top of it and call it a day. We’ve got soul food that’ll make you forget about your car’s suspension, music that was born right here before it got famous somewhere else, and people who know how to laugh through it all.</p>
-
-                    <p>Do Jackson isn’t just a website. It’s a celebration of what makes this city roll — even if it’s on four mismatched tires. We’re talking about smoky BBQ joints that still take cash only, cocktail lounges that double as history lessons, and hidden gems that the GPS still doesn’t believe exist.</p>
-
-                    <p>While the rest of Mississippi might not always understand Jackson, we know exactly who we are — the beating heart, the creative spark, the cultural hub that keeps this state from flatlining.</p>
-
-                    <p>So whether you’re a local who knows where to find the best late-night catfish plate, or a visitor brave enough to dodge a few craters to get there — welcome.</p>
-
-                    <p>You’ve just entered DoJackson.com, where we celebrate everything that makes the capital city so perfectly imperfect. Because if you’re gonna do Mississippi — you better Do Jackson.</p>
+                    <div class="hero-byline-img" style="width:100%;height:200px;background:url('img/skyline.jpg') center/cover;border-radius:8px;margin:1rem 0;" aria-label="Jackson skyline"></div>
+                    <p>Welcome to Jackson, Mississippi—a city where rich history, vibrant culture, and Southern charm come together in ways you won't find anywhere else. From soul-stirring live music to mouthwatering cuisine, world-class museums to outdoor adventures, Jackson offers something for everyone.</p>
+                    <p>Explore historic landmarks like the Mississippi State Capitol and the Medgar and Myrlie Evers Home National Monument. Dive into arts and culture at the Mississippi Museum of Art or catch a live show at one of our iconic music venues. Savor authentic Southern cooking at beloved local spots, or experience the city's thriving food scene at festivals and farmers markets.</p>
+                    <p>Whether you're visiting for a weekend or calling Jackson home, there's always something new to discover. So come on—Do Jackson your way!</p>
                 </div>
-
+                
                 <button id="dojackson-toggle" class="read-toggle" aria-expanded="false">See more</button>
             </div>
         </section>
@@ -70,6 +58,7 @@
             });
     </script>
     <script>
+        // Toggle script for Do Jackson story
         (function(){
             var btn = document.getElementById('dojackson-toggle');
             var story = document.getElementById('dojackson-story');

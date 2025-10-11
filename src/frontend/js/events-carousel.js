@@ -128,41 +128,10 @@ function renderEventsCarousel(filter = 'all', onlyThisWeek = false) {
     });
   }
 
-  const weeks = groupEventsByWeek(filtered);
-  if (onlyThisWeek) {
-    // Find the week that contains today's date
-    const today = new Date();
-    for (const weekEvents of weeks) {
-      for (const ev of weekEvents) {
-        const d = new Date(ev.date);
-        // if same ISO week number, show this week
-        const sameWeek = (d >= startOfWeek(today)) && (d < startOfWeek(addDays(today, 7)));
-        if (sameWeek) {
-          container.appendChild(createWeekCarousel(weekEvents));
-          return;
-        }
-      }
-    }
-    // If none found, fall back to showing all
+  // Create a single carousel with all filtered events
+  if (filtered.length) {
+    container.appendChild(createWeekCarousel(filtered));
   }
-  weeks.forEach(weekEvents => {
-    if (weekEvents.length) {
-      container.appendChild(createWeekCarousel(weekEvents));
-    }
-  });
-}
-
-function startOfWeek(d) {
-  const date = new Date(d);
-  const day = date.getDay(); // 0 (Sun) - 6
-  const diff = date.getDate() - day;
-  return new Date(date.setDate(diff));
-}
-
-function addDays(d, days) {
-  const dt = new Date(d);
-  dt.setDate(dt.getDate() + days);
-  return dt;
 }
 function initEvents() {
   const main = document.querySelector('main');
@@ -182,25 +151,7 @@ function initEvents() {
   const dropdown = document.getElementById('event-category');
   if (dropdown) {
     dropdown.addEventListener('change', function() {
-      renderEventsCarousel(this.value, false);
-    });
-  }
-
-  // Wire week toggles (if present in DOM)
-  const thisWeekBtn = document.getElementById('show-this-week');
-  const allWeeksBtn = document.getElementById('show-all-weeks');
-  if (thisWeekBtn && allWeeksBtn) {
-    thisWeekBtn.addEventListener('click', function(){
-      thisWeekBtn.setAttribute('aria-pressed','true');
-      allWeeksBtn.setAttribute('aria-pressed','false');
-      const selected = (document.getElementById('event-category') || {}).value || 'all';
-      renderEventsCarousel(selected, true);
-    });
-    allWeeksBtn.addEventListener('click', function(){
-      thisWeekBtn.setAttribute('aria-pressed','false');
-      allWeeksBtn.setAttribute('aria-pressed','true');
-      const selected = (document.getElementById('event-category') || {}).value || 'all';
-      renderEventsCarousel(selected, false);
+      renderEventsCarousel(this.value);
     });
   }
   // week toggles wiring

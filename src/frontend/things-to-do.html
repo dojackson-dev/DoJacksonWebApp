@@ -5,60 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Things To Do</title>
-    <link rel="stylesheet" href="/sass/style.css">
-    <link rel="stylesheet" href="/hero.css">
+    <link rel="stylesheet" href="sass/style.css">
 </head>
 <body>
     <div id="header"></div>
     <main>
         <h1 class="pageTitle">Things To Do</h1>
-        <section class="pagehero things-hero">
-            <div class="hero-placeholder">
-<<<<<<< HEAD
-                <img src="img/twomushero.jpg" alt="Two Museums">
-            </div>
+        <section class="pagehero">
+            <img class="hero-img" src="img/twomuseums.jpg" alt="Two Mississippi Museums">
             <div class="hero-desc">
-                <h2 class="hero-title">The Two Museums: where Mississippi tells the hard truth—and the whole story</h2>
-                <p class="byline"><em>By The Renaissance Man</em></p>
-
+                <h2 class="hero-title">Two Mississippi Museums</h2>
+                <p class="byline"><em>Mississippi History & Civil Rights</em></p>
+                
                 <div class="story-collapsible collapsed" id="twomu-story">
-                    <div class="hero-byline-img" aria-hidden="true">Image</div>
-                    <p>Step inside the Two Mississippi Museums and you feel it right away: Jackson isn’t whispering its past; it’s saying it out loud. Side-by-side, the Museum of Mississippi History and the Mississippi Civil Rights Museum stitch together thousands of years of people, place, pain, grit, food, music, and stubborn hope—presented as immersive stories, not just things behind glass. 2mm.mdah.ms.gov</p>
-
-                    <p>One half of the campus takes you through 15,000 years of Mississippi life—Indigenous ingenuity, river trade, war and rebuilding, writers at their typewriters, and a Delta juke joint that practically vibrates. The other half is eight galleries that follow the state’s central role in the Civil Rights Movement, naming names and showing receipts. Together they make a single, essential visit: context and conscience under one roof. Visit Mississippi</p>
-
-                    <p>At the heart of the Civil Rights Museum is a room that breathes with you. “This Little Light of Mine”—a soaring light sculpture—swells with the music of the Movement as visitors gather, a moment of uplift between the hardest chapters. It’s not just pretty; it’s the thesis: individual lights adding up to something powerful. mcrm.mdah.ms.gov</p>
-
-                    <p>And the museum does not flinch. It confronts the murder of Emmett Till with objects you don’t forget—from the Bryant’s Grocery doors to a newly displayed .45-caliber pistol tied to the killing, unveiled on the 70th anniversary of his murder. Family members expressed mixed feelings; museum leaders framed it as telling the “unvarnished truth.” Hard history, handled head-on.</p>
-
-                    <p>If you want a gut-check on impact, listen to visitors. Reviews consistently call it “powerful,” “astonishing,” and an “important visit.” You can feel that consensus in the lobby—folks quiet, hands on knees, processing. It’s a museum that lingers.</p>
-
-                    <p>This place also marks a civic milestone. Opened December 9, 2017 for the state’s bicentennial, the 200,000-square-foot campus represents a major public investment and a promise: we’re going to tell our full story here in Jackson, where the water’s rough sometimes and the roads have… character—but the culture is rich and the truth matters. 2mm.mdah.ms.gov</p>
-
-                    <p>For DoJackson, the Two Museums are more than an attraction; they’re a compass. They honor those who forced America to keep its receipts, and they give today’s visitors—students, families, church groups, your stubborn uncle if you dare—a space to wrestle with what comes next. In a city that feeds the body and the soul, this is where Mississippi feeds the memory.</p>
-
-                    <p><strong>If you go</strong></p>
-                    <p>Where: 222 North Street, Jackson, MS 39201. Visit Jackson</p>
-                    <p>Hours: Tue–Sat 9am–5pm; Sun 11am–5pm; closed Mondays. Admission is free every Sunday.</p>
+                    <div class="hero-byline-img" style="width:100%;height:200px;background:url('img/twomushero.jpg') center/cover;border-radius:8px;margin:1rem 0;" aria-label="Museum exhibits"></div>
+                    <p>Discover Mississippi's compelling story at the Two Mississippi Museums—a breathtaking campus in downtown Jackson featuring the Museum of Mississippi History and the Mississippi Civil Rights Museum.</p>
+                    <p>Walk through interactive exhibits that bring to life 15,000 years of Mississippi history, from prehistoric times to the present day. Then step into the powerful Civil Rights Museum, where eight galleries chronicle the state's pivotal role in the American civil rights movement.</p>
+                    <p>These world-class museums offer an unforgettable journey through triumph and tragedy, courage and change. It's more than a museum visit—it's an experience that will stay with you long after you leave.</p>
                 </div>
-
+                
                 <button id="twomu-toggle" class="read-toggle" aria-expanded="false">See more</button>
-=======
-                <img src="img/twomuseums.jpg" alt="Two Museums in Jackson">
-            </div>
-            <div class="hero-desc">
-                <h2 class="hero-title">Two Museums, One Day: Plan Your Cultural Crawl</h2>
-                <p class="byline"><em>By Local Guide</em></p>
-
-                <div class="story-collapsible collapsed" id="museum-story">
-                    <div class="hero-byline-img" aria-hidden="true">Image</div>
-                    <p>If you only have one day in Jackson, make it count: start at the art museum for a morning of inspiring collections, then cross town to dive deep into local history and hands-on exhibits. You’ll leave with new favorites, full bellies, and a better sense of why this city punches above its weight when it comes to culture.</p>
-
-                    <p>Stroll between galleries, stop for a quick coffee or lunch, and look for rotating exhibits that bring in national acts and local legends alike. Museums aren’t just buildings — they’re meeting places where stories are shared and connections are made.</p>
-                </div>
-
-                <button id="museum-toggle" class="read-toggle" aria-expanded="false">See more</button>
->>>>>>> hero
             </div>
         </section>
         <div id="things-list"></div>
@@ -86,8 +52,8 @@
         });
         fetch('/footer.html').then(r=>r.text()).then(d=>{document.getElementById('footer').innerHTML=d;});
     </script>
-    <script type="module" src="./js/things-to-do-carousel.js"></script>
     <script>
+        // Toggle script for Two Museums story
         (function(){
             var btn = document.getElementById('twomu-toggle');
             var story = document.getElementById('twomu-story');
@@ -109,5 +75,6 @@
             }
         })();
     </script>
+    <script type="module" src="./js/things-to-do-carousel.js"></script>
 </body>
 </html>
