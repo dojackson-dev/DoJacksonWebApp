@@ -108,6 +108,26 @@ function renderEventsCarousel(filter = 'all', onlyThisWeek = false) {
       }
     });
   }
+
+  if (onlyThisWeek) {
+    const now = new Date();
+    const start = new Date(now);
+    // set to Sunday
+    start.setDate(now.getDate() - now.getDay());
+    start.setHours(0,0,0,0);
+    const end = new Date(start);
+    end.setDate(start.getDate() + 6);
+    end.setHours(23,59,59,999);
+    filtered = filtered.filter(item => {
+      try {
+        const d = new Date(item.date);
+        return d >= start && d <= end;
+      } catch(e) {
+        return false;
+      }
+    });
+  }
+
   const weeks = groupEventsByWeek(filtered);
   if (onlyThisWeek) {
     // Find the week that contains today's date
@@ -152,6 +172,11 @@ function initEvents() {
   }
   if (!document.querySelector('.events-filter')) {
     main.insertBefore(createFilterDropdown(), document.getElementById('events-list'));
+    // Insert week toggles (This week / All weeks)
+    const toggleWrap = document.createElement('div');
+    toggleWrap.className = 'events-week-toggle';
+    toggleWrap.innerHTML = `<button id="show-this-week" class="toggle-btn">This week</button><button id="show-all-weeks" class="toggle-btn active">All weeks</button>`;
+    main.insertBefore(toggleWrap, document.getElementById('events-list'));
   }
   renderEventsCarousel();
   const dropdown = document.getElementById('event-category');
@@ -176,6 +201,21 @@ function initEvents() {
       allWeeksBtn.setAttribute('aria-pressed','true');
       const selected = (document.getElementById('event-category') || {}).value || 'all';
       renderEventsCarousel(selected, false);
+    });
+  }
+  // week toggles wiring
+  const btnThis = document.getElementById('show-this-week');
+  const btnAll = document.getElementById('show-all-weeks');
+  if (btnThis && btnAll) {
+    btnThis.addEventListener('click', function() {
+      btnThis.classList.add('active'); btnAll.classList.remove('active');
+      const sel = (document.getElementById('event-category') || {}).value || 'all';
+      renderEventsCarousel(sel, true);
+    });
+    btnAll.addEventListener('click', function() {
+      btnAll.classList.add('active'); btnThis.classList.remove('active');
+      const sel = (document.getElementById('event-category') || {}).value || 'all';
+      renderEventsCarousel(sel, false);
     });
   }
 }

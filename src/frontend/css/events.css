@@ -1,0 +1,90 @@
+/* Scoped styles for the Events page */
+
+/* Center the week toggle and make the buttons visually clear */
+.events-week-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.events-week-toggle .toggle-btn {
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.5rem;
+  border: 2px solid #d67a00; /* orange-ish border when inactive */
+  background: #FF6F00; /* vivid orange (secondary token) for inactive */
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 120ms ease;
+}
+
+.events-week-toggle .toggle-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Active button uses royal blue */
+.events-week-toggle .toggle-btn.active {
+  background: #0052CC; /* royal blue (primary token) */
+  border-color: #003a99;
+  color: #ffffff;
+}
+
+/* Horizontal carousel container */
+.events-carousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0 1.5rem 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.events-card {
+  /* Make each card fill the carousel viewport so only one is visible at a time */
+  min-width: 100%;
+  max-width: 100%;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+.events-card .card {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  padding: 0.9rem;
+  /* replace heavy border/shadow with subtle elevation */
+  box-shadow: 0 4px 12px rgba(16,24,40,0.04);
+  border: 0; /* remove visible border */
+}
+
+/* Make the page title use the vivid orange bg and royal blue text as requested earlier */
+.pageTitle {
+  background: #FF6F00 !important;
+  color: #0052CC !important;
+}
+
+/* Dark-gray footer override for this page only */
+#footer {
+  background: #343A40 !important; /* dark gray */
+  color: #ffffff !important;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Small utilities */
+.website-btn {
+  display: inline-block;
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.375rem;
+  background: #0052CC;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Ensure toggle is readable on small screens */
+@media (max-width: 640px) {
+  .events-week-toggle { gap: 0.35rem; }
+  .events-week-toggle .toggle-btn { padding: 0.4rem 0.7rem; }
+  .events-card { min-width: 220px; }
+}

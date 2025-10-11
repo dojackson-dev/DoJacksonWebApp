@@ -6,49 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events</title>
     <link rel="stylesheet" href="/sass/style.css">
-    <link rel="stylesheet" href="/hero.css">
+    <link rel="stylesheet" href="/css/events.css">
 </head>
 <body>
     <div id="header"></div>
     <main>
         <h1 class="pageTitle">Events</h1>
-    <section class="pagehero events-hero">
-            <div class="hero-placeholder">
-                <img src="img/folkfestival.jpg" alt="National Folk Festival in Jackson">
-            </div>
-            <div class="hero-desc">
-                <h2 class="hero-title">National Folk Festival Comes to Jackson Nov. 7-9</h2>
-                <p class="byline"><em>By The Renaissance Man</em></p>
-
-                <div class="story-collapsible collapsed" id="folkfest-story">
-                    <img class="hero-byline-img" src="img/nationalfolkfestival.jpg" alt="National Folk Festival">
-                    <p>On a cool November morning, you can feel the rhythm before you see the stages. It tumbles down Capitol Street, slides past the courthouse, and bounces off the old brick and new glass of a city that has always kept time with the South. The National Folk Festival is here—three free days of music, craft, dance, and food—and Jackson is about to do what it does best: turn talent into togetherness.</p>
-
-                    <p>This festival isn’t just a big weekend. It’s a statement. Out of all the places in America, the nation’s longest-running celebration of traditional arts chose Jackson for a multi-year run. That means our streets, our chefs, our makers, our neighborhoods will be the front porch of American culture. Visitors won’t just pass through—they’ll post up, listen close, and learn the stories we’ve been telling in this city for generations.</p>
-
-                    <p>And what stories they are. Jackson’s soundtrack runs deep: Farish Street blues and gospel choirs, Sunday brass from HBCU traditions, soul that rolled out of local studios and into jukeboxes nationwide. When fiddles spark up next to a drumline cadence, when a zydeco groove slips into a Delta shuffle, it won’t feel like a mash-up—it’ll feel like home. This is where elders and up-and-comers trade licks, where porch songs meet parade routes, where your uncle’s two-step finally gets its moment on a main stage.</p>
-
-                    <p>The energy spills everywhere. Downtown restaurants extend their hours. Food trucks hit their stride—tamales steaming, catfish popping, wings and waffles, and that signature comeback sauce on everything. Hotels fill. Rideshare lights blink. Makers sell out of prints and pottery. Stagehands get extra shifts, bartenders new regulars, and mom-and-pop shops meet customers they’ll see again next month. That’s the quiet power of a festival: money changes hands locally, first impressions turn into return trips, and a thousand small wins add up to a city-sized boost.</p>
-
-                    <p>The benefits don’t stop at checkout counters. When people experience Jackson at its best—welcoming, creative, delicious—they take that story home. A weekend visit becomes a conference booking, a school tour, a film scout’s note, a new investor’s curiosity. Festivals plant seeds: in neighborhoods, in business plans, in young artists who discover their next instrument just by wandering into the right set at the right time.</p>
-
-                    <p>So bring the kids, grab a lawn chair, and come early. Wander the craft tents. Learn a step from a dancer who learned it from their grandmother. Let the brass band shake the week off your shoulders. Trade smiles with strangers. Support a vendor who set up before sunrise. Snap a photo, tag it #DoJackson, and mean it.</p>
-
-                    <p>Because this isn’t simply a festival landing in Jackson. It’s Jackson showing the country what a festival city looks like—rooted in tradition, wide open to the world, and ready to turn one great weekend into momentum all year long.</p>
-
-                    <p>See you downtown, November 7–9. Bring your appetite. Bring your curiosity. We’ll bring the beat.</p>
-                </div>
-
-                <button id="folkfest-toggle" class="read-toggle" aria-expanded="false">See more</button>
-            </div>
+        <section class="pagehero">
+            <div class="hero-placeholder" style="width:100%;height:180px;background:#eee;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#888;font-size:1.5rem;">Image Placeholder</div>
+            <div class="hero-desc">Find out what's happening in Jackson this week!</div>
         </section>
-
-        <!-- Events controls (filter dropdown is inserted by JS) -->
-        <div class="events-controls" style="text-align:center;margin:1rem 0;">
-            <button id="show-this-week" class="read-toggle" aria-pressed="false" title="Show events for the current week">This week</button>
-            <button id="show-all-weeks" class="read-toggle" aria-pressed="true" title="Show events for all weeks">All weeks</button>
-        </div>
-
         <div id="events-list"></div>
     </main>
     <div id="footer"></div>
@@ -73,28 +40,6 @@
             }
         });
         fetch('/footer.html').then(r=>r.text()).then(d=>{document.getElementById('footer').innerHTML=d;});
-    </script>
-    <script>
-        (function(){
-            var btn = document.getElementById('folkfest-toggle');
-            var story = document.getElementById('folkfest-story');
-            if(btn && story){
-                btn.addEventListener('click', function(){
-                    var expanded = btn.getAttribute('aria-expanded') === 'true';
-                    if(expanded){
-                        story.classList.remove('expanded');
-                        story.classList.add('collapsed');
-                        btn.textContent = 'See more';
-                        btn.setAttribute('aria-expanded','false');
-                    } else {
-                        story.classList.remove('collapsed');
-                        story.classList.add('expanded');
-                        btn.textContent = 'See less';
-                        btn.setAttribute('aria-expanded','true');
-                    }
-                });
-            }
-        })();
     </script>
     <script type="module" src="./js/events-carousel.js"></script>
 </body>
