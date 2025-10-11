@@ -14,3 +14,12 @@
 .event-day { font-size: 0.9rem; color: #666; }
 .website-btn { display:inline-block; margin-top:0.5rem; padding:6px 10px; background:#0b5ed7; color:#fff; border-radius:4px; text-decoration:none }
 .card-desc .desc-title { font-weight:600; }
+
+.events-week-toggle {
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.events-week-toggle .toggle-btn { margin: 0 0.25rem; padding:6px 10px; border-radius:6px; border:1px solid #d67a00; background:#ffa500; color:#032b6b }
+.events-week-toggle .toggle-btn.active { background:#0b5ed7; color:#fff; border-color:#0b5ed7 }
