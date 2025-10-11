@@ -5,15 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Things To Do</title>
-    <link rel="stylesheet" href="/sass/style.css">
+    <link rel="stylesheet" href="sass/style.css">
 </head>
 <body>
     <div id="header"></div>
     <main>
         <h1 class="pageTitle">Things To Do</h1>
         <section class="pagehero">
-            <div class="hero-placeholder" style="width:100%;height:180px;background:#eee;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#888;font-size:1.5rem;">Image Placeholder</div>
-            <div class="hero-desc">Explore top attractions, activities, and experiences nearby.</div>
+            <img class="hero-img" src="img/twomuseums.jpg" alt="Two Mississippi Museums">
+            <div class="hero-desc">
+                <h2 class="hero-title">Two Mississippi Museums</h2>
+                <p class="byline"><em>Mississippi History & Civil Rights</em></p>
+                
+                <div class="story-collapsible collapsed" id="twomu-story">
+                    <div class="hero-byline-img" style="width:100%;height:200px;background:url('img/twomushero.jpg') center/cover;border-radius:8px;margin:1rem 0;" aria-label="Museum exhibits"></div>
+                    <p>Discover Mississippi's compelling story at the Two Mississippi Museums—a breathtaking campus in downtown Jackson featuring the Museum of Mississippi History and the Mississippi Civil Rights Museum.</p>
+                    <p>Walk through interactive exhibits that bring to life 15,000 years of Mississippi history, from prehistoric times to the present day. Then step into the powerful Civil Rights Museum, where eight galleries chronicle the state's pivotal role in the American civil rights movement.</p>
+                    <p>These world-class museums offer an unforgettable journey through triumph and tragedy, courage and change. It's more than a museum visit—it's an experience that will stay with you long after you leave.</p>
+                </div>
+                
+                <button id="twomu-toggle" class="read-toggle" aria-expanded="false">See more</button>
+            </div>
         </section>
         <div id="things-list"></div>
     </main>
@@ -39,6 +51,29 @@
             }
         });
         fetch('/footer.html').then(r=>r.text()).then(d=>{document.getElementById('footer').innerHTML=d;});
+    </script>
+    <script>
+        // Toggle script for Two Museums story
+        (function(){
+            var btn = document.getElementById('twomu-toggle');
+            var story = document.getElementById('twomu-story');
+            if(btn && story){
+                btn.addEventListener('click', function(){
+                    var expanded = btn.getAttribute('aria-expanded') === 'true';
+                    if(expanded){
+                        story.classList.remove('expanded');
+                        story.classList.add('collapsed');
+                        btn.textContent = 'See more';
+                        btn.setAttribute('aria-expanded','false');
+                    } else {
+                        story.classList.remove('collapsed');
+                        story.classList.add('expanded');
+                        btn.textContent = 'See less';
+                        btn.setAttribute('aria-expanded','true');
+                    }
+                });
+            }
+        })();
     </script>
     <script type="module" src="./js/things-to-do-carousel.js"></script>
 </body>

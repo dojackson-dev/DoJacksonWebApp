@@ -128,12 +128,10 @@ function renderEventsCarousel(filter = 'all', onlyThisWeek = false) {
     });
   }
 
-  const weeks = groupEventsByWeek(filtered);
-  weeks.forEach(weekEvents => {
-    if (weekEvents.length) {
-      container.appendChild(createWeekCarousel(weekEvents));
-    }
-  });
+  // Create a single carousel with all filtered events
+  if (filtered.length) {
+    container.appendChild(createWeekCarousel(filtered));
+  }
 }
 function initEvents() {
   const main = document.querySelector('main');
