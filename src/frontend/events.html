@@ -12,7 +12,7 @@
     <div id="header"></div>
     <main>
         <h1 class="pageTitle">Events</h1>
-        <section class="pagehero events-hero">
+    <section class="pagehero events-hero">
             <div class="hero-placeholder">
                 <img src="img/folkfestival.jpg" alt="National Folk Festival in Jackson">
             </div>
@@ -42,6 +42,13 @@
                 <button id="folkfest-toggle" class="read-toggle" aria-expanded="false">See more</button>
             </div>
         </section>
+
+        <!-- Events controls (filter dropdown is inserted by JS) -->
+        <div class="events-controls" style="text-align:center;margin:1rem 0;">
+            <button id="show-this-week" class="read-toggle" aria-pressed="false" title="Show events for the current week">This week</button>
+            <button id="show-all-weeks" class="read-toggle" aria-pressed="true" title="Show events for all weeks">All weeks</button>
+        </div>
+
         <div id="events-list"></div>
     </main>
     <div id="footer"></div>
