@@ -323,6 +323,297 @@ body{background:#ccc;color:#333;font-family:Arial, sans-serif;margin:0;padding:0
     transform: scale(1.1);
 }
 
+/* Connect Page Styles */
+.connect-intro {
+    padding: 2rem 1rem;
+    background: #0052CC;
+    color: white;
+    text-align: center;
+    border-bottom: 4px solid #FF6F00;
+}
+
+.intro-content h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.intro-content p {
+    max-width: 800px;
+    margin: 0 auto 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.submission-forms {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.form-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.form-nav-btn {
+    background: #fff;
+    border: 2px solid #0052CC;
+    color: #0052CC;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-nav-btn:hover,
+.form-nav-btn.active {
+    background: #0052CC;
+    color: white;
+}
+
+.submission-form {
+    display: none;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.submission-form.active {
+    display: block;
+}
+
+.submission-form h3 {
+    color: #0052CC;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #0052CC;
+    box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.1);
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: #FF6F00;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Confirmation Page Styles */
+.confirmation-section {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.confirmation-content {
+    max-width: 600px;
+    text-align: center;
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: #FF6F00;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.confirmation-content h1 {
+    color: #0052CC;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.confirmation-message {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.next-steps {
+    text-align: left;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.next-steps h2 {
+    color: #0052CC;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.next-steps ul {
+    list-style: none;
+    padding: 0;
+}
+
+.next-steps li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.next-steps li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #0052CC;
+    font-weight: bold;
+}
+
+.contact-info {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.contact-info a {
+    color: #0052CC;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: #FF6F00;
+    color: white;
+}
+
+.btn-secondary {
+    background: white;
+    color: #0052CC;
+    border: 2px solid #0052CC;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-secondary:hover {
+    background: #0052CC;
+    color: white;
+}
+
+.social-media-section {
+    border-top: 1px solid #eee;
+    padding-top: 2rem;
+}
+
+.social-media-section h3 {
+    color: #0052CC;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design for Forms */
+@media (max-width: 768px) {
+    .form-navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .form-nav-btn {
+        width: 200px;
+    }
+    
+    .submission-form {
+        padding: 1.5rem;
+    }
+    
+    .confirmation-content {
+        padding: 2rem 1rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 200px;
+        text-align: center;
+    }
+}
+
 .social-text {
     color: #666;
     font-size: 1rem;
