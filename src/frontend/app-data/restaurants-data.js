@@ -157,7 +157,7 @@ export const restaurants = [
     description: "Speakeasy cocktail bar tucked behind Brent's."
   },
   {
-    name: "Broad Street Baking Company & Caf├⌐",
+    name: "Broad Street Baking Company & Cafe",
     address: "4465 I-55 N, Ste 101, Jackson, MS 39206",
     phone: "(601) 362-2900",
     url: "https://www.broadstbakery.com/",
