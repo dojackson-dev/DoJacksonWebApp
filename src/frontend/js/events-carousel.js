@@ -70,6 +70,34 @@ function shuffleArray(array) {
 }
 function createWeekCarousel(events) {
   events = shuffleArray([...events]);
+  
+  // Create container wrapper
+  const container = document.createElement('div');
+  container.className = 'carousel-container';
+  
+  // Create navigation arrows
+  const nav = document.createElement('div');
+  nav.className = 'carousel-nav';
+  
+  const leftArrow = document.createElement('button');
+  leftArrow.className = 'carousel-arrow carousel-arrow-left';
+  leftArrow.innerHTML = '‹';
+  leftArrow.setAttribute('aria-label', 'Previous event');
+  
+  const navLabel = document.createElement('span');
+  navLabel.className = 'carousel-nav-label';
+  navLabel.textContent = 'Scroll to browse events';
+  
+  const rightArrow = document.createElement('button');
+  rightArrow.className = 'carousel-arrow carousel-arrow-right';
+  rightArrow.innerHTML = '›';
+  rightArrow.setAttribute('aria-label', 'Next event');
+  
+  nav.appendChild(leftArrow);
+  nav.appendChild(navLabel);
+  nav.appendChild(rightArrow);
+  
+  // Create carousel
   const carousel = document.createElement('div');
   carousel.className = 'events-carousel';
   carousel.innerHTML = events.map(event => `
@@ -89,7 +117,37 @@ function createWeekCarousel(events) {
       </div>
     </div>
   `).join('');
-  return carousel;
+  
+  // Add scroll functionality
+  const cardWidth = 300; // Approximate card width + gap
+  
+  function updateArrowStates() {
+    const scrollLeft = carousel.scrollLeft;
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+    
+    leftArrow.disabled = scrollLeft <= 0;
+    rightArrow.disabled = scrollLeft >= maxScroll - 1;
+  }
+  
+  leftArrow.addEventListener('click', () => {
+    carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    setTimeout(updateArrowStates, 300);
+  });
+  
+  rightArrow.addEventListener('click', () => {
+    carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    setTimeout(updateArrowStates, 300);
+  });
+  
+  carousel.addEventListener('scroll', updateArrowStates);
+  
+  // Initial arrow state
+  setTimeout(updateArrowStates, 100);
+  
+  container.appendChild(nav);
+  container.appendChild(carousel);
+  
+  return container;
 }
 function renderEventsCarousel(filter = 'all', onlyThisWeek = false) {
   const container = document.getElementById('events-list');
