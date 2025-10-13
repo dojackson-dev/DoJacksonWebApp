@@ -1,9 +1,19 @@
 <!-- Moved from project root -->
 <!-- header.html -->
 <header>
+    <!-- Mobile Header (visible on small screens) -->
     <div class="mobile-header">
-    <img src="img/justclicklogo.png" alt="JustClick Logo" class="mobile-logo" id="menuToggle" />
+        <img src="img/justclicklogo.png" alt="JustClick Logo" class="mobile-logo" id="menuToggle" />
     </div>
+    
+    <!-- Desktop Header (visible on medium+ screens) -->
+    <div class="desktop-header">
+        <div class="banner-container">
+            <img src="img/banner.png" alt="Do Jackson Banner" class="banner-logo" />
+        </div>
+    </div>
+    
+    <!-- Navigation Menu (responsive layout) -->
     <nav class="navbar" id="mobileMenu">
         <ul>
             <li><a href="/index.html">Home</a></li>
@@ -15,3 +25,38 @@
         </ul>
     </nav>
 </header>
+
+<script>
+// Mobile menu toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (menuToggle && mobileMenu) {
+        // Initially hide mobile menu
+        mobileMenu.classList.add('menu-hidden');
+        
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('menu-hidden');
+            mobileMenu.classList.toggle('menu-visible');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!menuToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.add('menu-hidden');
+                mobileMenu.classList.remove('menu-visible');
+            }
+        });
+        
+        // Close menu when window is resized to desktop size
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.remove('menu-hidden', 'menu-visible');
+            } else {
+                mobileMenu.classList.add('menu-hidden');
+            }
+        });
+    }
+});
+</script>
