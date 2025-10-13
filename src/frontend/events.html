@@ -4,14 +4,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Jackson MS Events Calendar | Do Jackson Events & Activities</title>
+    <meta name="description" content="Find the best events happening in Jackson, Mississippi. Discover festivals, concerts, cultural events, and activities in Mississippi's capital city.">
+    <meta name="keywords" content="Jackson MS events, Jackson Mississippi calendar, Jackson festivals, Jackson concerts, Mississippi events, Jackson activities, National Folk Festival Jackson">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dojackson.com/events.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jackson MS Events Calendar | Do Jackson">
+    <meta property="og:description" content="Discover the best events in Jackson, Mississippi - festivals, concerts, cultural events, and activities in the capital city.">
+    <meta property="og:image" content="https://dojackson.com/img/folkfestival.jpg">
+    <meta property="og:url" content="https://dojackson.com/events.html">
+    <meta property="og:site_name" content="Do Jackson">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jackson MS Events Calendar">
+    <meta name="twitter:description" content="Find festivals, concerts, and cultural events happening in Jackson, Mississippi.">
+    <meta name="twitter:image" content="https://dojackson.com/img/folkfestival.jpg">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EventListing", 
+      "name": "Jackson MS Events Calendar",
+      "description": "Calendar of events, festivals, and activities in Jackson, Mississippi",
+      "url": "https://dojackson.com/events.html",
+      "location": {
+        "@type": "City",
+        "name": "Jackson",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Mississippi"
+        }
+      }
+    }
+    </script>
+    
     <link rel="stylesheet" href="sass/style.css">
     <link rel="stylesheet" href="css/events.css">
 </head>
 <body>
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
+    
     <div id="header"></div>
     <main>
         <h1 class="pageTitle">Events</h1>
+        
+        <!-- Social Media Buttons -->
+        <section class="social-media-section">
+            <div class="social-container">
+                <h3>Follow & Share</h3>
+                <div class="social-buttons">
+                    <!-- Facebook Like Button -->
+                    <div class="fb-like" 
+                         data-href="https://www.facebook.com/contact.dojackson" 
+                         data-width="" 
+                         data-layout="button_count" 
+                         data-action="like" 
+                         data-size="large" 
+                         data-share="false">
+                    </div>
+                    
+                    <!-- Facebook Share Button -->
+                    <div class="fb-share-button" 
+                         data-href="https://dojackson.com/events.html" 
+                         data-layout="button_count" 
+                         data-size="large">
+                    </div>
+                    
+                    <!-- Instagram Follow Button -->
+                    <a href="https://instagram.com/dojackson537" 
+                       target="_blank" 
+                       class="instagram-follow-btn">
+                        <img src="img/instagramicon.png" alt="Instagram" class="social-icon">
+                        Follow on Instagram
+                    </a>
+                    
+                    <!-- TikTok Follow Button -->
+                    <a href="https://tiktok.com/@dojackson.com" 
+                       target="_blank" 
+                       class="tiktok-follow-btn">
+                        <img src="img/tiktokico.png" alt="TikTok" class="social-icon">
+                        Follow on TikTok
+                    </a>
+                </div>
+                <p class="social-text">Follow us and share Jackson's exciting events!</p>
+            </div>
+        </section>
+        
         <section class="pagehero">
             <img class="hero-img" src="img/folkfestival.jpg" alt="National Folk Festival">
             <div class="hero-desc">
@@ -28,6 +115,7 @@
                 <button id="folkfest-toggle" class="read-toggle" aria-expanded="false">See more</button>
             </div>
         </section>
+
         <div id="events-list"></div>
     </main>
     <div id="footer"></div>

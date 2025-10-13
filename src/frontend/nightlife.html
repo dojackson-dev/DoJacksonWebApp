@@ -4,13 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nightlife</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Jackson MS Nightlife | Bars, Clubs & Entertainment | Do Jackson</title>
+    <meta name="description" content="Discover the best nightlife in Jackson, Mississippi. Bars, clubs, lounges, live music venues, and entertainment in Mississippi's capital city.">
+    <meta name="keywords" content="Jackson MS nightlife, Jackson bars, Jackson clubs, Jackson Mississippi nightlife, Jackson entertainment, live music Jackson MS, Jackson lounges, bars Jackson MS">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dojackson.com/nightlife.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jackson MS Nightlife | Do Jackson">
+    <meta property="og:description" content="Explore the best bars, clubs, and nightlife venues in Jackson, Mississippi. Your guide to evening entertainment in the capital city.">
+    <meta property="og:image" content="https://dojackson.com/img/cigar.jpg">
+    <meta property="og:url" content="https://dojackson.com/nightlife.html">
+    <meta property="og:site_name" content="Do Jackson">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jackson MS Nightlife Guide">
+    <meta name="twitter:description" content="Discover the best bars, clubs, and entertainment venues in Jackson, Mississippi.">
+    <meta name="twitter:image" content="https://dojackson.com/img/cigar.jpg">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NightlifeEntertainment",
+      "name": "Jackson MS Nightlife Guide", 
+      "description": "Complete guide to bars, clubs, and nightlife venues in Jackson, Mississippi",
+      "url": "https://dojackson.com/nightlife.html",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jackson",
+        "addressRegion": "MS",
+        "addressCountry": "US"
+      }
+    }
+    </script>
+    
     <link rel="stylesheet" href="sass/style.css">
 </head>
 <body>
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
+    
     <div id="header"></div>
     <main>
         <h1 class="pageTitle">Nightlife</h1>
+        
+        <!-- Social Media Buttons -->
+        <section class="social-media-section">
+            <div class="social-container">
+                <h3>Follow & Share</h3>
+                <div class="social-buttons">
+                    <!-- Facebook Like Button -->
+                    <div class="fb-like" 
+                         data-href="https://www.facebook.com/contact.dojackson" 
+                         data-width="" 
+                         data-layout="button_count" 
+                         data-action="like" 
+                         data-size="large" 
+                         data-share="false">
+                    </div>
+                    
+                    <!-- Facebook Share Button -->
+                    <div class="fb-share-button" 
+                         data-href="https://dojackson.com/nightlife.html" 
+                         data-layout="button_count" 
+                         data-size="large">
+                    </div>
+                    
+                    <!-- Instagram Follow Button -->
+                    <a href="https://instagram.com/dojackson537" 
+                       target="_blank" 
+                       class="instagram-follow-btn">
+                        <img src="img/instagramicon.png" alt="Instagram" class="social-icon">
+                        Follow on Instagram
+                    </a>
+                    
+                    <!-- TikTok Follow Button -->
+                    <a href="https://tiktok.com/@dojackson.com" 
+                       target="_blank" 
+                       class="tiktok-follow-btn">
+                        <img src="img/tiktokico.png" alt="TikTok" class="social-icon">
+                        Follow on TikTok
+                    </a>
+                </div>
+                <p class="social-text">Follow us and share Jackson's nightlife scene!</p>
+            </div>
+        </section>
+        
         <section class="pagehero">
             <img class="hero-img" src="img/cigar.jpg" alt="Cigars">
             <div class="hero-desc">
@@ -51,6 +136,7 @@
                 <button id="jimmy-toggle" class="read-toggle" aria-expanded="false">See more</button>
             </div>
         </section>
+
         <div id="nightlife-list"></div>
     </main>
     <div id="footer"></div>

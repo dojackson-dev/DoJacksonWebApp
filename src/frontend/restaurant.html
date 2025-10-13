@@ -4,13 +4,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurants | DojFoundation</title>
+  
+  <!-- SEO Meta Tags -->
+  <title>Best Restaurants in Jackson MS | Do Jackson Dining Guide</title>
+  <meta name="description" content="Discover the best restaurants in Jackson, Mississippi. From soul food to fine dining, explore 40+ top-rated restaurants in Mississippi's capital city.">
+  <meta name="keywords" content="Jackson MS restaurants, Jackson Mississippi dining, best restaurants Jackson MS, Jackson food scene, Mississippi restaurants, Jackson dining guide, soul food Jackson MS">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dojackson.com/restaurant.html">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Best Restaurants in Jackson MS | Do Jackson">
+  <meta property="og:description" content="Discover 40+ top-rated restaurants in Jackson, Mississippi. From soul food to fine dining, your complete dining guide to Mississippi's capital.">
+  <meta property="og:image" content="https://dojackson.com/img/eatingstory.jpg">
+  <meta property="og:url" content="https://dojackson.com/restaurant.html">
+  <meta property="og:site_name" content="Do Jackson">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Best Restaurants in Jackson MS">
+  <meta name="twitter:description" content="Discover 40+ top-rated restaurants in Jackson, Mississippi. Your complete dining guide to the capital city.">
+  <meta name="twitter:image" content="https://dojackson.com/img/eatingstory.jpg">
+  
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Jackson MS Restaurants",
+    "description": "Complete guide to the best restaurants in Jackson, Mississippi",
+    "url": "https://dojackson.com/restaurant.html",
+    "about": {
+      "@type": "City",
+      "name": "Jackson",
+      "containedInPlace": {
+        "@type": "State", 
+        "name": "Mississippi"
+      }
+    }
+  }
+  </script>
+  
   <link rel="stylesheet" href="/sass/style.css">
 </head>
 <body>
+  <!-- Facebook SDK -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
+  
   <div id="header"></div>
   <main>
         <h1 class="pageTitle">Restaurants</h1>
+        
+        <!-- Social Media Buttons -->
+        <section class="social-media-section">
+            <div class="social-container">
+                <h3>Follow & Share</h3>
+                <div class="social-buttons">
+                    <!-- Facebook Like Button -->
+                    <div class="fb-like" 
+                         data-href="https://www.facebook.com/contact.dojackson" 
+                         data-width="" 
+                         data-layout="button_count" 
+                         data-action="like" 
+                         data-size="large" 
+                         data-share="false">
+                    </div>
+                    
+                    <!-- Facebook Share Button -->
+                    <div class="fb-share-button" 
+                         data-href="https://dojackson.com/restaurant.html" 
+                         data-layout="button_count" 
+                         data-size="large">
+                    </div>
+                    
+                    <!-- Instagram Follow Button -->
+                    <a href="https://instagram.com/dojackson537" 
+                       target="_blank" 
+                       class="instagram-follow-btn">
+                        <img src="img/instagramicon.png" alt="Instagram" class="social-icon">
+                        Follow on Instagram
+                    </a>
+                    
+                    <!-- TikTok Follow Button -->
+                    <a href="https://tiktok.com/@dojackson.com" 
+                       target="_blank" 
+                       class="tiktok-follow-btn">
+                        <img src="img/tiktokico.png" alt="TikTok" class="social-icon">
+                        Follow on TikTok
+                    </a>
+                </div>
+                <p class="social-text">Follow us and share Jackson's amazing restaurant scene!</p>
+            </div>
+        </section>
+        
         <section class="pagehero">
             <img class="hero-img" src="img/food.jpg" alt="Jackson Food Scene">
             <div class="hero-desc">
@@ -37,6 +124,7 @@
                 <button id="food-toggle" class="read-toggle" aria-expanded="false">See more</button>
             </div>
         </section>
+
         <div id="restaurants-list"></div>
     </main>
   <div id="footer"></div>

@@ -4,13 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Things To Do</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Things to Do in Jackson MS | Attractions, Museums & Activities</title>
+    <meta name="description" content="Explore top attractions and things to do in Jackson, Mississippi. Museums, parks, historic sites, shopping, and outdoor activities in the capital city.">
+    <meta name="keywords" content="Jackson MS attractions, things to do Jackson Mississippi, Jackson museums, Jackson parks, Mississippi Museum of Art, Jackson Zoo, LeFleur's Bluff, Jackson tourism">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dojackson.com/things-to-do.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Things to Do in Jackson MS | Do Jackson">
+    <meta property="og:description" content="Discover top attractions in Jackson, Mississippi - museums, parks, historic sites, and outdoor activities in the capital city.">
+    <meta property="og:image" content="https://dojackson.com/img/twomuseums.jpg">
+    <meta property="og:url" content="https://dojackson.com/things-to-do.html">
+    <meta property="og:site_name" content="Do Jackson">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Things to Do in Jackson MS">
+    <meta name="twitter:description" content="Explore museums, parks, and attractions in Jackson, Mississippi's capital city.">
+    <meta name="twitter:image" content="https://dojackson.com/img/twomuseums.jpg">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TouristAttraction",
+      "name": "Jackson MS Attractions Guide",
+      "description": "Complete guide to attractions, museums, and activities in Jackson, Mississippi",
+      "url": "https://dojackson.com/things-to-do.html",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jackson",
+        "addressRegion": "MS",
+        "addressCountry": "US"
+      }
+    }
+    </script>
+    
     <link rel="stylesheet" href="sass/style.css">
 </head>
 <body>
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
+    
     <div id="header"></div>
     <main>
         <h1 class="pageTitle">Things To Do</h1>
+        
+        <!-- Social Media Buttons -->
+        <section class="social-media-section">
+            <div class="social-container">
+                <h3>Follow & Share</h3>
+                <div class="social-buttons">
+                    <!-- Facebook Like Button -->
+                    <div class="fb-like" 
+                         data-href="https://www.facebook.com/contact.dojackson" 
+                         data-width="" 
+                         data-layout="button_count" 
+                         data-action="like" 
+                         data-size="large" 
+                         data-share="false">
+                    </div>
+                    
+                    <!-- Facebook Share Button -->
+                    <div class="fb-share-button" 
+                         data-href="https://dojackson.com/things-to-do.html" 
+                         data-layout="button_count" 
+                         data-size="large">
+                    </div>
+                    
+                    <!-- Instagram Follow Button -->
+                    <a href="https://instagram.com/dojackson537" 
+                       target="_blank" 
+                       class="instagram-follow-btn">
+                        <img src="img/instagramicon.png" alt="Instagram" class="social-icon">
+                        Follow on Instagram
+                    </a>
+                    
+                    <!-- TikTok Follow Button -->
+                    <a href="https://tiktok.com/@dojackson.com" 
+                       target="_blank" 
+                       class="tiktok-follow-btn">
+                        <img src="img/tiktokico.png" alt="TikTok" class="social-icon">
+                        Follow on TikTok
+                    </a>
+                </div>
+                <p class="social-text">Follow us and share Jackson's amazing attractions!</p>
+            </div>
+        </section>
+        
         <section class="pagehero">
             <img class="hero-img" src="img/twomuseums.jpg" alt="Two Mississippi Museums">
             <div class="hero-desc">
@@ -27,6 +112,7 @@
                 <button id="twomu-toggle" class="read-toggle" aria-expanded="false">See more</button>
             </div>
         </section>
+
         <div id="things-list"></div>
     </main>
     <div id="footer"></div>

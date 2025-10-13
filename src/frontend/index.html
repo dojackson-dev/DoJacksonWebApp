@@ -3,12 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Demo</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Do Jackson | Discover Jackson, Mississippi - Events, Restaurants, Nightlife & Things to Do</title>
+    <meta name="description" content="Explore Jackson, Mississippi's best restaurants, events, nightlife, and attractions. Your complete guide to dining, entertainment, and things to do in Mississippi's capital city.">
+    <meta name="keywords" content="Jackson Mississippi, Jackson MS, restaurants Jackson MS, events Jackson MS, nightlife Jackson MS, things to do Jackson, Mississippi tourism, Jackson attractions, Jackson dining, Jackson entertainment">
+    <meta name="author" content="Do Jackson">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dojackson.com/">
+    
+    <!-- Open Graph Meta Tags for Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Do Jackson | Discover Jackson, Mississippi">
+    <meta property="og:description" content="Your complete guide to Jackson, MS - restaurants, events, nightlife, and attractions in Mississippi's vibrant capital city.">
+    <meta property="og:image" content="https://dojackson.com/img/jacksonwall.jpg">
+    <meta property="og:url" content="https://dojackson.com/">
+    <meta property="og:site_name" content="Do Jackson">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Do Jackson | Discover Jackson, Mississippi">
+    <meta name="twitter:description" content="Your complete guide to Jackson, MS - restaurants, events, nightlife, and attractions in Mississippi's capital city.">
+    <meta name="twitter:image" content="https://dojackson.com/img/jacksonwall.jpg">
+    <meta name="twitter:creator" content="@DoJacksonMS">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#FF6F00">
+    <meta name="msapplication-TileColor" content="#FF6F00">
+    <meta name="application-name" content="Do Jackson">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logo.png">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TouristInformationCenter",
+      "name": "Do Jackson",
+      "description": "Complete guide to Jackson, Mississippi's restaurants, events, nightlife, and attractions",
+      "url": "https://dojackson.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jackson",
+        "addressRegion": "MS",
+        "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Jackson",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Mississippi"
+        }
+      }
+    }
+    </script>
+    
     <link rel="stylesheet" href="sass/style.css">
 </head>
 <body>
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
+    
     <div id="header"></div>
     <main>
+        <h1 class="pageTitle">Do Jackson</h1>
+        
+        <!-- Social Media Buttons -->
+        <section class="social-media-section">
+            <div class="social-container">
+                <h3>Follow & Share Do Jackson</h3>
+                <div class="social-buttons">
+                    <!-- Facebook Like Button -->
+                    <div class="fb-like" 
+                         data-href="https://www.facebook.com/contact.dojackson" 
+                         data-width="" 
+                         data-layout="button_count" 
+                         data-action="like" 
+                         data-size="large" 
+                         data-share="false">
+                    </div>
+                    
+                    <!-- Facebook Share Button -->
+                    <div class="fb-share-button" 
+                         data-href="https://dojackson.com/" 
+                         data-layout="button_count" 
+                         data-size="large">
+                    </div>
+                    
+                    <!-- Instagram Follow Button -->
+                    <a href="https://instagram.com/dojackson537" 
+                       target="_blank" 
+                       class="instagram-follow-btn">
+                        <img src="img/instagramicon.png" alt="Instagram" class="social-icon">
+                        Follow on Instagram
+                    </a>
+                    
+                    <!-- TikTok Follow Button -->
+                    <a href="https://tiktok.com/@dojackson.com" 
+                       target="_blank" 
+                       class="tiktok-follow-btn">
+                        <img src="img/tiktokico.png" alt="TikTok" class="social-icon">
+                        Follow on TikTok
+                    </a>
+                </div>
+                <p class="social-text">Follow us for updates on Jackson events, restaurants, and attractions!</p>
+            </div>
+        </section>
+        
         <section class="pagehero">
             <img class="hero-img" src="img/jacksonwall.jpg" alt="Do Jackson mural">
             <div class="hero-desc">
