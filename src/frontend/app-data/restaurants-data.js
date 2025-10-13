@@ -121,7 +121,7 @@ export const restaurants = [
     description: "Beloved Fondren staple for Gulf-southern fine dining (Redfish Anna!)."
   },
   {
-    name: "Mayflower Caf├⌐",
+    name: "Mayflower Cafe",
     address: "123 W Capitol St, Jackson, MS 39201",
     phone: "(601) 355-4122",
     url: "https://www.themayflowercafe.com/",
@@ -153,7 +153,7 @@ export const restaurants = [
     phone: "(601) 366-3427",
     url: "https://www.apothecaryjackson.com/",
     type: "cocktail-bar",
-    image: "img/apothecary.jpg",
+    image: "img/apocathery.jpg",
     description: "Speakeasy cocktail bar tucked behind Brent's."
   },
   {
@@ -234,11 +234,11 @@ export const restaurants = [
     phone: "(601) 867-7020",
     url: "https://www.littletokyofondren.com/",
     type: "casual",
-    image: "img/littletokyo.jpg",
+    image: "img/littletokyo.jpeg",
     description: "Fondren favorite for sushi, hibachi & bento."
   },
   {
-    name: "Nissan Caf├⌐ by Nick Wallace (Two Mississippi Museums)",
+    name: "Nissan Cafe by Nick Wallace (Two Mississippi Museums)",
     address: "222 North St, Jackson, MS 39201",
     phone: "(601) 576-6814",
     url: "https://www.nickwallaceculinary.com/restaurants",
@@ -247,7 +247,7 @@ export const restaurants = [
     description: "Modern Mississippi comfort food inside the museum complex."
   },
   {
-    name: "Old Capitol Inn ΓÇö The Sunroom Caf├⌐ & Bar",
+    name: "Old Capitol Inn — The Sunroom Cafe & Bar",
     address: "226 N State St, Jackson, MS 39201",
     phone: "(601) 359-9000",
     url: "https://www.oldcapitolinn.com/sunroom/",
@@ -360,7 +360,7 @@ export const restaurants = [
     phone: "(601) 948-3429",
     url: "https://www.visitjackson.com/directory/1908-provisions/",
     type: "fine-dining",
-    image: "img/1908.jpg",
+    image: "img/1908.png",
     description: "Southern-rooted dinner service and Sunday brunch inside the historic inn."
   }
 ];
