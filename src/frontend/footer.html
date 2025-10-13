@@ -1,6 +1,45 @@
 <!-- Moved from project root -->
 <!-- footer.html -->
+<!-- Ensure Facebook SDK div exists -->
+<div id="fb-root"></div>
+
 <footer>
+    <!-- Facebook Comments Section -->
+    <div class="facebook-comments-section">
+        <div class="comments-container">
+            <h3 class="comments-title">Join the Conversation</h3>
+            <p class="comments-subtitle">Share your thoughts about Jackson and connect with fellow visitors!</p>
+            
+            <!-- Debug info for local development -->
+            <div id="fb-debug-info" style="background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 4px; font-size: 12px; color: #666; display: none;">
+                <strong>Debug Info:</strong><br>
+                Current URL: <span id="current-url-display"></span><br>
+                Facebook SDK Status: <span id="fb-sdk-status">Loading...</span>
+            </div>
+            
+            <!-- Facebook Comments Plugin -->
+            <div class="fb-comments" 
+                 id="fb-comments-widget"
+                 data-width="100%" 
+                 data-numposts="5"
+                 data-order-by="reverse_time"
+                 data-colorscheme="light"
+                 data-mobile="true"
+                 data-lazy="false">
+            </div>
+
+            
+
+            
+            <!-- Fallback message -->
+            <div id="fb-comments-fallback" style="display: none; text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px; color: #666;">
+                <p><strong>Comments are loading...</strong></p>
+                <p style="font-size: 0.9rem;">If comments don't appear, try refreshing the page.<br>
+                Comments require Facebook login to post and view.</p>
+            </div>
+        </div>
+    </div>
+
     <div class="site-footer">
         <div style="margin-bottom: 0.5rem;">
             <strong>Address:</strong> 234 E. Capitol St, Jackson, MS 39201
@@ -21,3 +60,134 @@
         </div>
     </div>
 </footer>
+
+<script>
+// Debug mode - set to true for local development
+const DEBUG_MODE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+// Simple refresh function for comments
+function refreshFacebookComments() {
+    console.log('Refreshing Facebook comments...');
+    const commentsWidget = document.getElementById('fb-comments-widget');
+    if (commentsWidget && typeof FB !== 'undefined') {
+        FB.XFBML.parse(commentsWidget.parentElement);
+    }
+}
+
+// Initialize Facebook comments when footer is loaded
+function initializeFacebookComments() {
+    const commentsWidget = document.getElementById('fb-comments-widget');
+    const debugInfo = document.getElementById('fb-debug-info');
+    const fallback = document.getElementById('fb-comments-fallback');
+    const currentUrlDisplay = document.getElementById('current-url-display');
+    const fbSdkStatus = document.getElementById('fb-sdk-status');
+    
+    if (commentsWidget) {
+        // Simple URL for Do Jackson comments
+        let commentsUrl;
+        
+        if (DEBUG_MODE) {
+            // For local development, use production domain
+            commentsUrl = 'https://dojackson.com' + (window.location.pathname || '/');
+        } else {
+            // For production, use current page URL
+            commentsUrl = window.location.href;
+        }
+        
+        // Set the URL for comments
+        commentsWidget.setAttribute('data-href', commentsUrl);
+        
+        // Also set additional attributes for better functionality
+        commentsWidget.setAttribute('data-locale', 'en_US');
+        
+        // Update debug info
+        if (DEBUG_MODE && debugInfo) {
+            debugInfo.style.display = 'block';
+            if (currentUrlDisplay) currentUrlDisplay.textContent = commentsUrl;
+            
+            // Set Facebook debugger link
+            const debugLink = document.getElementById('fb-debug-link');
+            if (debugLink) {
+                const fbDebugUrl = `https://developers.facebook.com/tools/debug/?q=${encodeURIComponent(commentsUrl)}`;
+                debugLink.href = fbDebugUrl;
+            }
+        }
+        
+        console.log('Setting Facebook comments for URL:', commentsUrl);
+        
+        // Update debug info
+        if (currentUrlDisplay) currentUrlDisplay.textContent = currentUrl;
+        
+        // Check Facebook SDK status
+        if (typeof FB !== 'undefined' && FB.XFBML) {
+            if (fbSdkStatus) fbSdkStatus.textContent = 'Loaded ✓';
+            
+            // Show debug info in development
+            if (DEBUG_MODE && debugInfo) {
+                debugInfo.style.display = 'block';
+            }
+            
+            // Clear any existing Facebook content first
+            commentsWidget.innerHTML = '';
+            
+            // Parse Facebook elements
+            FB.XFBML.parse(commentsWidget.parentElement);
+            
+            // Force a second parse attempt for stubborn cases
+            setTimeout(() => {
+                FB.XFBML.parse(commentsWidget.parentElement);
+                
+                // Check if comments loaded properly after delay
+                setTimeout(() => {
+                    const fbCommentsFrame = commentsWidget.querySelector('.fb_iframe_widget');
+                    if (!fbCommentsFrame && fallback) {
+                        fallback.style.display = 'block';
+                    }
+                }, 3000);
+            }, 2000);
+            
+        } else {
+            if (fbSdkStatus) fbSdkStatus.textContent = 'Not loaded ✗';
+            if (fallback) fallback.style.display = 'block';
+        }
+    }
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(initializeFacebookComments, 500);
+    });
+} else {
+    setTimeout(initializeFacebookComments, 500);
+}
+
+// Ensure Facebook SDK is properly configured
+if (typeof window.fbAsyncInit === 'undefined') {
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '1234567890', // Placeholder - this can work for testing
+            cookie: true,
+            xfbml: true,
+            version: 'v18.0',
+            status: true
+        });
+        
+        console.log('Facebook SDK initialized with comments support');
+        
+        // Re-parse after SDK is ready
+        setTimeout(initializeFacebookComments, 1500);
+    };
+}
+
+// Additional Facebook SDK loaded check
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        if (typeof FB === 'undefined') {
+            console.warn('Facebook SDK failed to load');
+            const fallback = document.getElementById('fb-comments-fallback');
+            if (fallback) fallback.style.display = 'block';
+        }
+    }, 2000);
+});
+</script>
