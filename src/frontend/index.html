@@ -37,9 +37,30 @@
                 var menuToggle = document.getElementById('menuToggle');
                 var mobileMenu = document.getElementById('mobileMenu');
                 if (menuToggle && mobileMenu) {
-                    mobileMenu.style.display = 'none';
+                    // Function to check if we're on mobile
+                    function isMobile() {
+                        return window.innerWidth <= 600;
+                    }
+                    
+                    // Function to update menu visibility
+                    function updateMenuVisibility() {
+                        if (isMobile()) {
+                            mobileMenu.style.display = 'none';
+                        } else {
+                            mobileMenu.style.display = 'block';
+                        }
+                    }
+                    
+                    // Set initial state
+                    updateMenuVisibility();
+                    
+                    // Update on resize
+                    window.addEventListener('resize', updateMenuVisibility);
+                    
                     menuToggle.addEventListener('click', function() {
-                        mobileMenu.style.display = (mobileMenu.style.display === 'none') ? 'block' : 'none';
+                        if (isMobile()) {
+                            mobileMenu.style.display = (mobileMenu.style.display === 'none') ? 'block' : 'none';
+                        }
                     });
                     var menuLinks = mobileMenu.querySelectorAll('a');
                     menuLinks.forEach(function(link) {
