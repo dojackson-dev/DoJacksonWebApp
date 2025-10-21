@@ -847,3 +847,32 @@ body{background:#ccc;color:#333;font-family:Arial, sans-serif;margin:0;padding:0
         max-width: 1400px;
     }
 }
+
+/* ===== RESPONSIVE LOGO SYSTEM ===== */
+/* Show mobile logo on small screens, hide desktop banner */
+.mobile-only {
+    display: block;
+}
+
+.desktop-banner {
+    display: none;
+}
+
+/* Show desktop banner on medium screens (601px+) and large screens, hide mobile logo */
+@media (min-width: 601px) {
+    .mobile-only {
+        display: none;
+    }
+    
+    .desktop-banner {
+        display: block;
+    }
+}
+
+/* ===== WIDER CONTENT LAYOUT ===== */
+/* Override main width for medium and large screens to match header width */
+@media (min-width: 601px) {
+    main {
+        max-width: 95vw !important;
+    }
+}
